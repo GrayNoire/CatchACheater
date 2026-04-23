@@ -1,8 +1,8 @@
 import random
 
 class player:
-    CHEATER_PROPORTION = 0.5
-    CHEATER_EDGE = 0.75
+    CHEATER_EDGE = 0.80
+
 
     def __init__(self, name):
         """Parameters:
@@ -13,6 +13,9 @@ class player:
         score (int): The player's current score, initialized to 0
         cheater (bool): Whether the player is a cheater, determined by a global variable CHEATER_PROPORTION
         """
+        self.CHEATER_PROPORTION = 0.5
+        # self.CHEATER_EDGE = 0.75
+
         self.name = name
         self.score = 0
         self.cheater = random.random() < self.CHEATER_PROPORTION
@@ -31,7 +34,7 @@ class player:
     def flip(self):
         r = random.random()
 
-        if self.cheater and r < self.CHEATER_EDGE:
+        if self.cheater and r < player.CHEATER_EDGE:
             self.score += 1
 
         else:

@@ -1,7 +1,7 @@
 from Player import player
 
 class game:
-    def __init__(self, num_players, num_flips):
+    def __init__(self, num_players: int, num_flips: int):
         """Parameters:
         num_players (int): The number of players in the game
         num_flips (int): The number of coin flips each player will perform
